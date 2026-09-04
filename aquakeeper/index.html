@@ -2,125 +2,170 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy — AquaKeeper</title>
-<meta name="description" content="Privacy Policy for AquaKeeper (鱼缸管家) — how we collect, use and protect your data.">
+<meta name="description" content="Privacy Policy for AquaKeeper — how we collect, use and protect your data. Your aquarium data stays on your device.">
+<meta name="color-scheme" content="light dark">
 <style>
   :root {
-    --bg: #f4f7f9;
+    --bg: #f7f5fb;
     --card: #ffffff;
-    --text: #16232b;
-    --muted: #5b6b76;
-    --accent: #0d7d8c;
-    --accent-soft: #e6f4f6;
-    --border: #dfe7ec;
-    --warn-bg: #fff8e6;
+    --text: #1c1a24;
+    --muted: #5f5b6b;
+    --accent: #7c3aed;
+    --accent-strong: #6d28d9;
+    --accent-soft: #ede9fe;
+    --on-accent: #ffffff;
+    --border: #e4e0ee;
+    --warn-bg: #fff8e8;
     --warn-border: #e8d9a8;
+    --warn-text: #6b5410;
+    --shadow: 0 1px 2px rgba(46, 16, 101, .05), 0 4px 16px rgba(46, 16, 101, .06);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #101a20;
-      --card: #17242c;
-      --text: #e6eef3;
-      --muted: #9db0bb;
-      --accent: #4cc4d4;
-      --accent-soft: #14343c;
-      --border: #26373f;
-      --warn-bg: #332c17;
+      --bg: #15131b;
+      --card: #1d1a26;
+      --text: #eae7f2;
+      --muted: #a49fb5;
+      --accent: #c4b5fd;
+      --accent-strong: #d8ccfe;
+      --accent-soft: #3a2a63;
+      --on-accent: #1c1030;
+      --border: #2e2940;
+      --warn-bg: #332b16;
       --warn-border: #5c4f22;
+      --warn-text: #ecd48a;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
     }
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-                 "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.75;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
   }
-  .wrap { max-width: 800px; margin: 0 auto; padding: 32px 20px 72px; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px calc(72px + env(safe-area-inset-bottom)); }
 
+  /* ---------- Header ---------- */
   header { text-align: center; margin-bottom: 28px; }
   .brand {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--accent-soft); color: var(--accent);
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-soft); color: var(--accent-strong);
     padding: 6px 16px; border-radius: 999px;
-    font-size: 14px; font-weight: 600; letter-spacing: .3px;
+    font-size: .875rem; font-weight: 700; letter-spacing: .3px;
   }
-  h1 { font-size: 30px; line-height: 1.3; margin: 18px 0 8px; letter-spacing: -.4px; }
-  .meta { color: var(--muted); font-size: 14px; }
+  h1 {
+    font-size: clamp(1.85rem, 5.5vw, 2.5rem);
+    line-height: 1.25; margin: 18px 0 8px; letter-spacing: -.02em;
+  }
+  .meta { color: var(--muted); font-size: .9rem; }
   .meta strong { color: var(--text); font-weight: 600; }
 
-  .langbar {
-    display: flex; justify-content: center; gap: 6px;
-    margin: 20px 0 8px; padding: 4px;
+  /* ---------- TOC ---------- */
+  .toc {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 999px; width: fit-content; margin-inline: auto;
+    border-radius: 16px; padding: 14px 16px; margin: 0 0 20px;
+    box-shadow: var(--shadow);
   }
-  .langbar button {
-    border: 0; background: transparent; color: var(--muted);
-    font: inherit; font-size: 14px; font-weight: 600;
-    padding: 7px 22px; border-radius: 999px; cursor: pointer;
-    transition: background .18s, color .18s;
+  .toc-title {
+    font-size: .75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--muted); margin: 0 0 10px;
   }
-  .langbar button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .toc-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .toc-list a {
+    display: inline-flex; align-items: center; min-height: 38px;
+    padding: 6px 14px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent-strong);
+    font-size: .875rem; font-weight: 600; text-decoration: none;
+    transition: background .15s ease, color .15s ease;
+  }
+  .toc-list a:hover { filter: brightness(1.05); }
+  .toc-list a:active { filter: brightness(.94); }
+  .toc-list .n { opacity: .65; margin-right: 6px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
+  /* ---------- Sections ---------- */
   .card {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 26px 26px 8px; margin-bottom: 18px;
+    border-radius: 16px; padding: 26px 26px 10px; margin-bottom: 18px;
+    box-shadow: var(--shadow);
   }
+  section { scroll-margin-top: 24px; }
   h2 {
-    font-size: 19px; margin: 0 0 14px; padding-bottom: 12px;
-    border-bottom: 1px solid var(--border); letter-spacing: -.2px;
+    font-size: clamp(1.15rem, 3vw, 1.3rem);
+    margin: 0 0 14px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border); letter-spacing: -.01em;
+    display: flex; align-items: baseline; gap: 10px;
   }
-  h3 { font-size: 15.5px; margin: 24px 0 8px; color: var(--accent); }
-  p, li { font-size: 15px; }
+  h2 .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+  h3 { font-size: 1rem; margin: 24px 0 8px; color: var(--accent-strong); }
+  p, li { font-size: .95rem; }
   ul, ol { padding-left: 22px; }
   li { margin-bottom: 7px; }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  li::marker { color: var(--accent); }
+  a { color: var(--accent-strong); text-decoration: none; border-bottom: 1px solid transparent; }
   a:hover { border-bottom-color: currentColor; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px;
+  }
+  strong { font-weight: 650; }
   code {
-    background: var(--accent-soft); color: var(--accent);
-    padding: 1px 6px; border-radius: 5px; font-size: 13.5px;
+    background: var(--accent-soft); color: var(--accent-strong);
+    padding: 1px 6px; border-radius: 5px; font-size: .85em;
   }
 
-  .summary { background: var(--accent-soft); border: 1px solid transparent; }
-  .summary h2 { border-bottom-color: rgba(0,0,0,.08); }
-  .summary ul { margin: 0; padding-left: 20px; }
-  @media (prefers-color-scheme: dark) {
-    .summary h2 { border-bottom-color: rgba(255,255,255,.1); }
+  /* ---------- Tables ---------- */
+  .table-wrap {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border); border-radius: 12px; margin: 10px 0 6px;
   }
-
-  table { width: 100%; border-collapse: collapse; margin: 10px 0 6px; font-size: 14.5px; }
-  th, td { text-align: left; padding: 11px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .4px; }
+  table { width: 100%; min-width: 540px; border-collapse: collapse; font-size: .9rem; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th {
+    color: var(--muted); font-weight: 700; font-size: .75rem;
+    text-transform: uppercase; letter-spacing: .06em;
+  }
   td:first-child { font-weight: 600; white-space: nowrap; }
   tr:last-child td { border-bottom: 0; }
 
+  /* ---------- Notes ---------- */
   .note {
     background: var(--warn-bg); border: 1px solid var(--warn-border);
-    border-radius: 12px; padding: 14px 18px; margin: 16px 0; font-size: 14.5px;
+    border-radius: 12px; padding: 14px 18px; margin: 16px 0; font-size: .9rem;
+    color: var(--warn-text);
   }
   .note strong { display: block; margin-bottom: 4px; }
 
-  footer { text-align: center; color: var(--muted); font-size: 13.5px; margin-top: 30px; }
+  .info {
+    background: var(--accent-soft); border-radius: 12px;
+    padding: 14px 18px; margin: 16px 0; font-size: .9rem;
+  }
 
-  [data-lang] { display: none; }
-  [data-lang].active { display: block; }
-  th span[data-lang].active,
-  td span[data-lang].active,
-  h1 span[data-lang].active,
-  h2 span[data-lang].active,
-  h3 span[data-lang].active { display: inline; }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 30px; }
 
   @media (max-width: 560px) {
-    .wrap { padding: 22px 14px 56px; }
-    h1 { font-size: 25px; }
-    .card { padding: 20px 18px 6px; border-radius: 14px; }
-    table { font-size: 13.5px; }
+    .wrap { padding: 28px 14px calc(56px + env(safe-area-inset-bottom)); }
+    .card { padding: 20px 16px 6px; border-radius: 14px; }
     td:first-child { white-space: normal; }
+    table { min-width: 480px; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .toc, footer { display: none; }
+    .card { box-shadow: none; border-color: #ccc; break-inside: avoid; }
+    a { color: #000; text-decoration: underline; }
   }
 </style>
 </head>
@@ -128,146 +173,110 @@
 <div class="wrap">
 
   <header>
-    <span class="brand">AquaKeeper · 鱼缸管家</span>
-    <h1>
-      <span data-lang="en" class="active">Privacy Policy</span>
-      <span data-lang="zh">隐私政策</span>
-    </h1>
+    <span class="brand">AquaKeeper</span>
+    <h1>Privacy Policy</h1>
     <p class="meta">
-      <span data-lang="en" class="active">Effective date: <strong>September 4, 2026</strong><br>Last updated: September 4, 2026</span>
-      <span data-lang="zh">生效日期：<strong>2026 年 9 月 4 日</strong><br>最近更新：2026 年 9 月 4 日</span>
+      Effective date: <strong>September 4, 2026</strong><br>
+      Last updated: September 4, 2026
     </p>
-
-    <div class="langbar" role="group" aria-label="Language">
-      <button type="button" data-set-lang="en" aria-pressed="true">English</button>
-      <button type="button" data-set-lang="zh" aria-pressed="false">中文</button>
-    </div>
   </header>
 
-  <!-- ==================== SUMMARY ==================== -->
-  <section class="card summary">
-    <h2>
-      <span data-lang="en" class="active">At a glance</span>
-      <span data-lang="zh">要点速览</span>
-    </h2>
-    <ul data-lang="en" class="active">
-      <li>Your aquarium data (tanks, water tests, photos, tasks) <strong>stays on your device</strong> — we never upload or sync it.</li>
-      <li>No account, no sign-up, no email address required to use the app.</li>
-      <li>We do use <strong>Google Firebase</strong> (analytics &amp; crash reports) and <strong>Google AdMob</strong> (ads), which collect device and usage identifiers.</li>
-      <li>The only content you send to our own server is a <strong>feedback message you choose to submit</strong>.</li>
-      <li>You can export or permanently delete all local data at any time from <em>Settings → Data</em>.</li>
+  <!-- ==================== TOC ==================== -->
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ul class="toc-list">
+      <li><a href="#who-we-are"><span class="n">1</span>Who we are</a></li>
+      <li><a href="#information-we-collect"><span class="n">2</span>Information we collect</a></li>
+      <li><a href="#how-we-use"><span class="n">3</span>How we use your information</a></li>
+      <li><a href="#third-parties"><span class="n">4</span>Third-party services</a></li>
+      <li><a href="#advertising"><span class="n">5</span>Advertising &amp; your choices</a></li>
+      <li><a href="#retention"><span class="n">6</span>Data retention &amp; deletion</a></li>
+      <li><a href="#security"><span class="n">7</span>Data security</a></li>
+      <li><a href="#children"><span class="n">8</span>Children's privacy</a></li>
+      <li><a href="#rights"><span class="n">9</span>Your rights</a></li>
+      <li><a href="#transfers"><span class="n">10</span>International transfers</a></li>
+      <li><a href="#dnt"><span class="n">11</span>Do Not Track</a></li>
+      <li><a href="#changes"><span class="n">12</span>Changes to this policy</a></li>
+      <li><a href="#contact"><span class="n">13</span>Contact us</a></li>
     </ul>
-    <ul data-lang="zh">
-      <li>你的鱼缸数据（鱼缸、水质检测、照片、维护任务）<strong>仅保存在你的设备上</strong>，我们不会上传或同步。</li>
-      <li>无需注册账号，也不用提供邮箱即可使用全部核心功能。</li>
-      <li>我们确实使用了 <strong>Google Firebase</strong>（分析与崩溃报告）和 <strong>Google AdMob</strong>（广告），它们会收集设备与使用情况标识符。</li>
-      <li>你主动发送到我们自有服务器的内容，<strong>仅限你自愿提交的意见反馈</strong>。</li>
-      <li>你可以随时在「我的 → 数据」中导出或彻底清除全部本地数据。</li>
-    </ul>
+  </nav>
+
+  <!-- ==================== 1. WHO WE ARE ==================== -->
+  <section class="card" id="who-we-are">
+    <h2><span class="num">1.</span> Who we are</h2>
+    <p>This Privacy Policy applies to <strong>AquaKeeper</strong> (the &ldquo;App&rdquo;), an aquarium management application published by the <strong>AquaKeeper team</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). For the purposes of applicable data protection laws, the AquaKeeper team is the <strong>data controller</strong> of the personal information described in this policy.</p>
+    <p>This policy does not apply to third-party services integrated into the App (such as Google Firebase or Google AdMob). Those services process data under their own privacy policies, which are linked in <a href="#third-parties">Section 4</a>.</p>
+    <p>This policy is governed by the laws applicable to the publisher's place of establishment, without prejudice to any mandatory consumer protections in your country or state of residence.</p>
   </section>
 
-  <!-- ==================== 1. INFORMATION WE COLLECT ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">1. Information we collect</span>
-      <span data-lang="zh">1. 我们收集的信息</span>
-    </h2>
+  <!-- ==================== 2. INFORMATION WE COLLECT ==================== -->
+  <section class="card" id="information-we-collect">
+    <h2><span class="num">2.</span> Information we collect</h2>
 
-    <h3>
-      <span data-lang="en" class="active">1.1 Information you provide voluntarily</span>
-      <span data-lang="zh">1.1 你主动提供的信息</span>
-    </h3>
-    <p data-lang="en" class="active">When you submit feedback through <em>Settings → Feedback</em>, we receive only the fields described below. Providing contact details is entirely optional.</p>
-    <p data-lang="zh">当你通过「我的 → 意见反馈」提交反馈时，我们只会收到下列字段。其中联系方式完全选填。</p>
-    <table>
-      <thead>
-        <tr>
-          <th><span data-lang="en" class="active">Field</span><span data-lang="zh">字段</span></th>
-          <th><span data-lang="en" class="active">Purpose</span><span data-lang="zh">用途</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span data-lang="en" class="active">Feedback type</span><span data-lang="zh">反馈类型</span></td>
-          <td data-lang="en" class="active">Categorising your report (problem or suggestion)</td>
-          <td data-lang="zh">区分反馈类型（问题或建议）</td>
-        </tr>
-        <tr>
-          <td><span data-lang="en" class="active">Message content</span><span data-lang="zh">反馈内容</span></td>
-          <td data-lang="en" class="active">Understanding and fixing the issue</td>
-          <td data-lang="zh">了解并修复你反馈的问题</td>
-        </tr>
-        <tr>
-          <td><span data-lang="en" class="active">Contact (optional)</span><span data-lang="zh">联系方式（选填）</span></td>
-          <td data-lang="en" class="active">Replying to you only if you ask us to</td>
-          <td data-lang="zh">仅在你希望我们回复时用于联系你</td>
-        </tr>
-        <tr>
-          <td><span data-lang="en" class="active">Platform &amp; app version</span><span data-lang="zh">平台与应用版本</span></td>
-          <td data-lang="en" class="active">Reproducing the issue on the right build</td>
-          <td data-lang="zh">在对应的版本与平台上复现问题</td>
-        </tr>
-        <tr>
-          <td><span data-lang="en" class="active">Timestamp</span><span data-lang="zh">提交时间</span></td>
-          <td data-lang="en" class="active">Ordering and following up on reports</td>
-          <td data-lang="zh">对反馈进行排序与跟进</td>
-        </tr>
-      </tbody>
-    </table>
+    <h3>2.1 Information you provide voluntarily</h3>
+    <p>When you submit feedback through <em>Settings &rarr; Feedback</em>, we receive only the fields described below. Providing contact details is entirely optional.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Field</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Feedback type</td><td>Categorising your report (problem or suggestion)</td></tr>
+          <tr><td>Message content</td><td>Understanding and fixing the issue</td></tr>
+          <tr><td>Contact (optional)</td><td>Replying to you only if you ask us to</td></tr>
+          <tr><td>Platform &amp; app version</td><td>Reproducing the issue on the right build</td></tr>
+          <tr><td>Timestamp</td><td>Ordering and following up on reports</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="note">
-      <span data-lang="en" class="active"><strong>Please note</strong>Never include passwords, payment details or other sensitive information in a feedback message.</span>
-      <span data-lang="zh"><strong>请注意</strong>请勿在反馈内容中填写密码、支付信息或其他敏感信息。</span>
+      <strong>Please note</strong>
+      Never include passwords, payment details or other sensitive information in a feedback message.
     </div>
 
-    <h3>
-      <span data-lang="en" class="active">1.2 Information collected automatically</span>
-      <span data-lang="zh">1.2 自动收集的信息</span>
-    </h3>
-    <p data-lang="en" class="active">To keep the app stable and to show ads, the following third-party services collect certain data automatically when you use AquaKeeper:</p>
-    <p data-lang="zh">为了维持应用稳定以及展示广告，以下第三方服务会在你使用 AquaKeeper 时自动收集部分数据：</p>
-    <table>
-      <thead>
-        <tr>
-          <th><span data-lang="en" class="active">Service</span><span data-lang="zh">服务</span></th>
-          <th><span data-lang="en" class="active">What it collects</span><span data-lang="zh">收集内容</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Firebase Analytics</td>
-          <td data-lang="en" class="active">In-app events and feature usage, app version, device model, OS version, region (derived from IP)</td>
-          <td data-lang="zh">应用内事件与功能使用情况、应用版本、设备型号、系统版本、地区（由 IP 推断）</td>
-        </tr>
-        <tr>
-          <td>Firebase Crashlytics</td>
-          <td data-lang="en" class="active">Crash stack traces, device model, OS version, app version, free storage / memory state at the time of the crash</td>
-          <td data-lang="zh">崩溃堆栈、设备型号、系统版本、应用版本、崩溃时的存储空间与内存状态</td>
-        </tr>
-        <tr>
-          <td>Firebase Remote Config</td>
-          <td data-lang="en" class="active">App instance identifier and app version, used to deliver remote feature switches</td>
-          <td data-lang="zh">应用实例标识符与应用版本，用于下发远程功能开关</td>
-        </tr>
-        <tr>
-          <td>Google AdMob</td>
-          <td data-lang="en" class="active">Advertising identifier (AAID on Android / IDFA on iOS), ad requests, ad interactions, and your consent choices</td>
-          <td data-lang="zh">广告标识符（Android 的 AAID / iOS 的 IDFA）、广告请求与互动，以及你的同意选择</td>
-        </tr>
-        <tr>
-          <td><span data-lang="en" class="active">App store update check</span><span data-lang="zh">应用商店更新检测</span></td>
-          <td data-lang="en" class="active">On iOS we query Apple's public lookup API; on Android we use Google Play's in-app update API. Both only receive your app's bundle identifier.</td>
-          <td data-lang="zh">iOS 端会请求 Apple 的公开查询接口，Android 端使用 Google Play 的应用内更新接口。两者都只会收到应用包名。</td>
-        </tr>
-      </tbody>
-    </table>
+    <h3>2.2 Information collected automatically</h3>
+    <p>To keep the App stable and to show ads, the following third-party services collect certain data automatically when you use AquaKeeper:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>What it collects</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Firebase Analytics</td>
+            <td>In-app events and feature usage, app version, device model, OS version, region (derived from IP)</td>
+          </tr>
+          <tr>
+            <td>Firebase Crashlytics</td>
+            <td>Crash stack traces, device model, OS version, app version, free storage / memory state at the time of the crash</td>
+          </tr>
+          <tr>
+            <td>Firebase Remote Config</td>
+            <td>App instance identifier and app version, used to deliver remote feature switches</td>
+          </tr>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Advertising identifier (AAID on Android / IDFA on iOS), ad requests, ad interactions, and your consent choices</td>
+          </tr>
+          <tr>
+            <td>App store update check</td>
+            <td>On iOS we query Apple's public lookup API; on Android we use Google Play's in-app update API. Both only receive the App's bundle identifier.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>
-      <span data-lang="en" class="active">1.3 Data that stays on your device</span>
-      <span data-lang="zh">1.3 仅保存在你设备上的数据</span>
-    </h3>
-    <p data-lang="en" class="active">The following is stored locally on your device and is <strong>never transmitted to us or to any server</strong>:</p>
-    <p data-lang="zh">以下内容仅保存在你的设备本地，<strong>绝不会传输给我们或任何服务器</strong>：</p>
-    <ul data-lang="en" class="active">
+    <h3>2.3 Device permissions</h3>
+    <p>The App requests the following device permissions, <strong>only when you actively use the corresponding feature</strong>. It never accesses the camera or your photos in the background.</p>
+    <ul>
+      <li><strong>Camera</strong> &mdash; to take photos of your aquarium when you choose the camera option.</li>
+      <li><strong>Photos / media library</strong> &mdash; to import photos you select, and to save images you explicitly export.</li>
+    </ul>
+    <p>You can revoke these permissions at any time in your device settings; the related features will simply stop working.</p>
+
+    <h3>2.4 Data that stays on your device</h3>
+    <p>The following is stored locally on your device and is <strong>never transmitted to us or to any server</strong>:</p>
+    <ul>
       <li>Aquarium profiles (tank names, sizes, livestock notes)</li>
       <li>Water test records and parameter history</li>
       <li>Photos you take or import from your gallery</li>
@@ -275,232 +284,133 @@
       <li>App preferences (language, dark mode, units)</li>
       <li>Your purchase entitlement status</li>
     </ul>
-    <ul data-lang="zh">
-      <li>鱼缸档案（鱼缸名称、尺寸、生物备注）</li>
-      <li>水质检测记录与参数历史</li>
-      <li>你拍摄或从相册导入的照片</li>
-      <li>维护任务、提醒与换算历史</li>
-      <li>应用偏好设置（语言、深色模式、单位）</li>
-      <li>你的购买权益状态</li>
-    </ul>
-    <p data-lang="en" class="active">Exporting your data creates a ZIP file on your device that you share through your device's own share sheet. We do not receive a copy.</p>
-    <p data-lang="zh">导出数据会在你的设备上生成一个 ZIP 文件，并通过系统分享面板发出，我们不会收到副本。</p>
+    <p>Exporting your data creates a ZIP file on your device that you share through your device's own share sheet. We do not receive a copy.</p>
   </section>
 
-  <!-- ==================== 2. HOW WE USE INFORMATION ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">2. How we use your information</span>
-      <span data-lang="zh">2. 我们如何使用你的信息</span>
-    </h2>
-    <ul data-lang="en" class="active">
-      <li>To answer and act on the feedback you send us.</li>
-      <li>To diagnose crashes and improve app stability.</li>
-      <li>To understand which features are used so we can prioritise improvements.</li>
-      <li>To display advertisements and to honour your advertising consent choices.</li>
-      <li>To notify you when a new version of the app is available.</li>
-    </ul>
-    <ul data-lang="zh">
-      <li>回复并处理你提交的意见反馈。</li>
-      <li>诊断崩溃问题，提升应用稳定性。</li>
-      <li>了解各项功能的使用情况，以决定改进优先级。</li>
-      <li>展示广告，并尊重你关于广告的同意选择。</li>
-      <li>在有新版本时通知你。</li>
-    </ul>
-    <p data-lang="en" class="active">We do <strong>not</strong> sell your personal information, and we do not use your aquarium data for advertising or profiling.</p>
-    <p data-lang="zh">我们<strong>不会出售</strong>你的个人信息，也不会将你的鱼缸数据用于广告或用户画像。</p>
+  <!-- ==================== 3. HOW WE USE ==================== -->
+  <section class="card" id="how-we-use">
+    <h2><span class="num">3.</span> How we use your information</h2>
+    <p>We use the information described above only for the following purposes. Where the EU/UK General Data Protection Regulation (GDPR) applies, we rely on the legal bases indicated:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Purpose</th><th>Legal basis (GDPR)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Answer and act on the feedback you send us</td><td>Consent, and legitimate interests in supporting our users</td></tr>
+          <tr><td>Diagnose crashes and improve app stability</td><td>Legitimate interests</td></tr>
+          <tr><td>Understand which features are used to prioritise improvements</td><td>Legitimate interests</td></tr>
+          <tr><td>Display advertisements and honour your advertising consent choices</td><td>Consent (where required by law)</td></tr>
+          <tr><td>Notify you when a new version of the App is available</td><td>Legitimate interests</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We do <strong>not</strong> sell your personal information, and we do not use your aquarium data for advertising or profiling. We do not use your information for automated decision-making or profiling that produces legal or similarly significant effects.</p>
   </section>
 
-  <!-- ==================== 3. THIRD PARTIES ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">3. Third-party services</span>
-      <span data-lang="zh">3. 第三方服务</span>
-    </h2>
-    <p data-lang="en" class="active">We share data only with the providers below, and only for the purposes stated. Each provider processes data under its own privacy policy.</p>
-    <p data-lang="zh">我们仅与下列服务提供方共享数据，且仅用于上述用途。各提供方均依据其自身的隐私政策处理数据。</p>
-    <table>
-      <thead>
-        <tr>
-          <th><span data-lang="en" class="active">Provider</span><span data-lang="zh">提供方</span></th>
-          <th><span data-lang="en" class="active">Role</span><span data-lang="zh">角色</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Google LLC<br>(Firebase)</td>
-          <td data-lang="en" class="active">Analytics, crash reporting, remote configuration</td>
-          <td data-lang="zh">分析、崩溃报告、远程配置</td>
-        </tr>
-        <tr>
-          <td>Google LLC<br>(AdMob)</td>
-          <td data-lang="en" class="active">Advertising and consent management</td>
-          <td data-lang="zh">广告展示与同意管理</td>
-        </tr>
-        <tr>
-          <td>Apple Inc.</td>
-          <td data-lang="en" class="active">iOS version lookup</td>
-          <td data-lang="zh">iOS 版本查询</td>
-        </tr>
-        <tr>
-          <td>Google LLC<br>(Play)</td>
-          <td data-lang="en" class="active">Android in-app update</td>
-          <td data-lang="zh">Android 应用内更新</td>
-        </tr>
-      </tbody>
-    </table>
-    <p data-lang="en" class="active">Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a><br>Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></p>
-    <p data-lang="zh">Google 隐私政策：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a><br>Apple 隐私政策：<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></p>
+  <!-- ==================== 4. THIRD PARTIES ==================== -->
+  <section class="card" id="third-parties">
+    <h2><span class="num">4.</span> Third-party services</h2>
+    <p>We share data only with the providers below, and only for the purposes stated. Each provider processes data under its own privacy policy.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Provider</th><th>Role</th><th>Privacy policy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google LLC (Firebase)</td><td>Analytics, crash reporting, remote configuration</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+          <tr><td>Google LLC (AdMob)</td><td>Advertising and consent management</td><td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></td></tr>
+          <tr><td>Apple Inc.</td><td>iOS version lookup</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td></tr>
+          <tr><td>Google LLC (Play)</td><td>Android in-app update</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
-  <!-- ==================== 4. ADVERTISING ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">4. Advertising and your choices</span>
-      <span data-lang="zh">4. 广告与你的选择</span>
-    </h2>
-    <p data-lang="en" class="active">AquaKeeper uses Google AdMob to display ads. If you are in the European Economic Area, the United Kingdom or Switzerland, we ask for your consent through Google's User Messaging Platform (UMP) before any personalised ad is loaded. You can change or withdraw your consent at any time.</p>
-    <p data-lang="zh">AquaKeeper 使用 Google AdMob 展示广告。如果你位于欧洲经济区、英国或瑞士，我们会在加载任何个性化广告之前，通过 Google 的用户消息平台（UMP）征求你的同意。你可以随时更改或撤回同意。</p>
-    <p data-lang="en" class="active">You can also control advertising at the operating-system level:</p>
-    <p data-lang="zh">你还可以在操作系统层面控制广告相关设置：</p>
-    <ul data-lang="en" class="active">
-      <li><strong>Android:</strong> Settings → Google → Ads → reset advertising ID or opt out of ads personalisation.</li>
-      <li><strong>iOS:</strong> Settings → Privacy &amp; Security → Tracking, to disable permission to track; and Settings → Privacy &amp; Security → Apple Advertising to disable personalised ads.</li>
-      <li>Resetting or limiting your advertising identifier stops it being used for personalised advertising.</li>
+  <!-- ==================== 5. ADVERTISING ==================== -->
+  <section class="card" id="advertising">
+    <h2><span class="num">5.</span> Advertising and your choices</h2>
+    <p>AquaKeeper uses Google AdMob to display ads. If you are in the European Economic Area, the United Kingdom or Switzerland, we ask for your consent through Google's User Messaging Platform (UMP) before any personalised ad is loaded. You can change or withdraw your consent at any time.</p>
+    <p>On iOS, AquaKeeper does not request tracking permission through Apple's App Tracking Transparency framework. As a result, Google serves <strong>non-personalised ads</strong> on iOS.</p>
+    <p>You can also control advertising at the operating-system level:</p>
+    <ul>
+      <li><strong>Android:</strong> Settings &rarr; Google &rarr; Ads &rarr; reset your advertising ID or opt out of ads personalisation.</li>
+      <li><strong>iOS:</strong> Settings &rarr; Privacy &amp; Security &rarr; Apple Advertising, to turn off personalised ads.</li>
+      <li><strong>Google account:</strong> visit <a href="https://adssettings.google.com" target="_blank" rel="noopener">My Ad Center</a> to control how ads are personalised across Google services.</li>
     </ul>
-    <ul data-lang="zh">
-      <li><strong>Android：</strong>设置 → Google → 广告 → 重置广告 ID 或退出广告个性化。</li>
-      <li><strong>iOS：</strong>设置 → 隐私与安全性 → 跟踪，关闭允许跟踪；以及设置 → 隐私与安全性 → Apple 广告，关闭个性化广告。</li>
-      <li>重置或限制广告标识符后，它将不再被用于个性化广告。</li>
-    </ul>
+    <p>If you are a California resident, please also see <a href="#rights">Section 9</a> for your opt-out rights regarding the &ldquo;sharing&rdquo; of personal information for cross-context behavioural advertising.</p>
   </section>
 
-  <!-- ==================== 5. RETENTION ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">5. Data retention and deletion</span>
-      <span data-lang="zh">5. 数据保留与删除</span>
-    </h2>
-    <ul data-lang="en" class="active">
-      <li><strong>On your device:</strong> your aquarium data persists until you delete it. Use <em>Settings → Data → Clear all data</em>, or simply uninstall the app.</li>
-      <li><strong>Feedback you sent:</strong> retained only as long as needed to handle your report and improve the app, after which it is deleted.</li>
+  <!-- ==================== 6. RETENTION ==================== -->
+  <section class="card" id="retention">
+    <h2><span class="num">6.</span> Data retention and deletion</h2>
+    <ul>
+      <li><strong>On your device:</strong> your aquarium data persists until you delete it. Use <em>Settings &rarr; Data &rarr; Clear all data</em>, or simply uninstall the App.</li>
+      <li><strong>Feedback you sent:</strong> retained only as long as needed to handle your report and improve the App, after which it is deleted.</li>
       <li><strong>Analytics and crash data:</strong> retained by Google Firebase according to the retention period configured in our Firebase project, after which it is automatically deleted.</li>
     </ul>
-    <ul data-lang="zh">
-      <li><strong>设备上的数据：</strong>你的鱼缸数据会一直保留，直到你主动删除。可通过「我的 → 数据 → 清除所有数据」操作，或直接卸载应用。</li>
-      <li><strong>你提交的反馈：</strong>仅在处理你的反馈和改进应用所必需的期限内保留，之后删除。</li>
-      <li><strong>分析与崩溃数据：</strong>由 Google Firebase 按我们 Firebase 项目中配置的保留期限保存，到期后自动删除。</li>
-    </ul>
   </section>
 
-  <!-- ==================== 6. SECURITY ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">6. Data security</span>
-      <span data-lang="zh">6. 数据安全</span>
-    </h2>
-    <p data-lang="en" class="active">We take reasonable technical and organisational measures to protect the information we handle, including restricting access to feedback data to the small team responsible for support. Because your core data never leaves your device, it also benefits from your device's own security (screen lock, disk encryption). No method of transmission or storage over the internet is completely secure, so we cannot guarantee absolute security.</p>
-    <p data-lang="zh">我们采取合理的技术与组织措施来保护所处理的信息，包括将反馈数据的访问权限限制在负责支持的少数人员范围内。由于你的核心数据从不出设备，它同时也受到设备自身安全机制（锁屏、磁盘加密）的保护。互联网上的传输与存储方式无法做到绝对安全，因此我们无法保证绝对的安全性。</p>
+  <!-- ==================== 7. SECURITY ==================== -->
+  <section class="card" id="security">
+    <h2><span class="num">7.</span> Data security</h2>
+    <p>We take reasonable technical and organisational measures to protect the information we handle, including restricting access to feedback data to the small team responsible for support. Because your core data never leaves your device, it also benefits from your device's own security (screen lock, disk encryption). No method of transmission or storage over the internet is completely secure, so we cannot guarantee absolute security.</p>
+    <p>In the unlikely event of a personal data breach that affects you, we will notify affected users and, where required, the relevant data protection authorities, in accordance with applicable law.</p>
   </section>
 
-  <!-- ==================== 7. CHILDREN ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">7. Children's privacy</span>
-      <span data-lang="zh">7. 儿童隐私</span>
-    </h2>
-    <p data-lang="en" class="active">AquaKeeper is a general-audience utility and is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information through a feedback message, please contact us and we will delete it promptly.</p>
-    <p data-lang="zh">AquaKeeper 是面向普通用户的工具型应用，并非面向 13 岁以下儿童。我们不会在知情的情况下收集儿童的个人信息。如果你认为有儿童通过意见反馈向我们提供了个人信息，请与我们联系，我们会立即删除。</p>
+  <!-- ==================== 8. CHILDREN ==================== -->
+  <section class="card" id="children">
+    <h2><span class="num">8.</span> Children's privacy</h2>
+    <p>AquaKeeper is a general-audience utility and is not directed at children under 13 (or the equivalent minimum age set by the laws of your jurisdiction, which may be up to 16 in some EU member states). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information through a feedback message, please contact us and we will delete it promptly.</p>
   </section>
 
-  <!-- ==================== 8. YOUR RIGHTS ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">8. Your rights</span>
-      <span data-lang="zh">8. 你的权利</span>
-    </h2>
-    <p data-lang="en" class="active">Depending on where you live, you may have the right to access, correct, delete, or receive a copy of the personal information we hold about you, to object to or restrict certain processing, and to withdraw consent at any time. You also have the right to lodge a complaint with your local data protection authority.</p>
-    <p data-lang="zh">根据你所在地区的法律，你可能有权访问、更正、删除我们所持有的关于你的个人信息，或获取其副本，有权反对或限制特定的处理活动，并有权随时撤回同意。你也有权向当地数据保护监管机构提出投诉。</p>
-    <p data-lang="en" class="active">Because AquaKeeper has no accounts, we hold no profile that identifies you. Most requests can be resolved directly on your device by exporting or clearing your data. For anything else, email us at the address below.</p>
-    <p data-lang="zh">由于 AquaKeeper 不设账号，我们并不持有能够识别你身份的用户档案。大多数请求都可以直接在设备上通过导出或清除数据来解决。其他情况请发送邮件至下方地址。</p>
+  <!-- ==================== 9. YOUR RIGHTS ==================== -->
+  <section class="card" id="rights">
+    <h2><span class="num">9.</span> Your rights</h2>
+
+    <h3>9.1 EEA and UK (GDPR)</h3>
+    <p>You have the right to access, rectify, erase, restrict and port your personal data, to object to certain processing, and to withdraw consent at any time. You also have the right to lodge a complaint with your local data protection authority.</p>
+
+    <h3>9.2 California (CCPA/CPRA)</h3>
+    <p>California residents have the right to know, delete, and correct personal information, and the right to opt out of the &ldquo;sale&rdquo; or &ldquo;sharing&rdquo; of personal information. We do not sell personal information for money. However, the advertising identifier collected by Google AdMob may constitute &ldquo;sharing&rdquo; for cross-context behavioural advertising under California law. You can opt out at any time using the controls in <a href="#advertising">Section 5</a> (system advertising settings or My Ad Center). We will not discriminate against you for exercising any of these rights. We do not collect &ldquo;sensitive personal information&rdquo; as defined by the CCPA.</p>
+
+    <h3>9.3 Other US states and other regions</h3>
+    <p>Residents of other US states with comprehensive privacy laws (such as Colorado, Connecticut, Virginia and Utah) have similar rights, including access, deletion, correction and portability. Where local law grants you comparable rights, we will honour them through the same channels.</p>
+
+    <h3>9.4 How to exercise your rights</h3>
+    <p>Because AquaKeeper has no accounts, we hold no profile that identifies you. Most requests can be resolved directly on your device by exporting or clearing your data. For anything else, email us at <a href="mailto:support@aquakeeper.app">support@aquakeeper.app</a>; we aim to respond within the period required by applicable law (and in any event within 7 days where feasible).</p>
   </section>
 
-  <!-- ==================== 9. TRANSFERS ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">9. International data transfers</span>
-      <span data-lang="zh">9. 数据跨境传输</span>
-    </h2>
-    <p data-lang="en" class="active">Feedback you submit is stored on a server located in Singapore. Analytics, crash and advertising data are processed by Google, which may transfer and store data in the United States and other countries. These transfers rely on standard contractual clauses or other lawful transfer mechanisms.</p>
-    <p data-lang="zh">你提交的反馈存储在位于新加坡的服务器上。分析、崩溃与广告数据由 Google 处理，可能会被传输并存储在美国及其他国家。这些传输依赖标准合同条款或其他合法的传输机制。</p>
+  <!-- ==================== 10. TRANSFERS ==================== -->
+  <section class="card" id="transfers">
+    <h2><span class="num">10.</span> International data transfers</h2>
+    <p>Feedback you submit is stored on a server located in Singapore. Analytics, crash and advertising data are processed by Google, which may transfer and store data in the United States and other countries. Where required, these transfers rely on adequacy decisions, standard contractual clauses or other lawful transfer mechanisms.</p>
   </section>
 
-  <!-- ==================== 10. CHANGES ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">10. Changes to this policy</span>
-      <span data-lang="zh">10. 本政策的变更</span>
-    </h2>
-    <p data-lang="en" class="active">We may update this policy from time to time. When we do, we will revise the "Last updated" date at the top of this page and, where the change is material, notify you inside the app. Continuing to use AquaKeeper after a change means you accept the updated policy.</p>
-    <p data-lang="zh">我们可能会不时更新本政策。更新时，我们会修改页面顶部的「最近更新」日期；若属于重大变更，还会在应用内通知你。变更后继续使用 AquaKeeper，即表示你接受更新后的政策。</p>
+  <!-- ==================== 11. DNT ==================== -->
+  <section class="card" id="dnt">
+    <h2><span class="num">11.</span> Do Not Track</h2>
+    <p>&ldquo;Do Not Track&rdquo; (DNT) is a browser setting; AquaKeeper is a native app, not a website, so DNT signals do not apply. Advertising choices are controlled through the settings described in <a href="#advertising">Section 5</a>.</p>
   </section>
 
-  <!-- ==================== 11. CONTACT ==================== -->
-  <section class="card">
-    <h2>
-      <span data-lang="en" class="active">11. Contact us</span>
-      <span data-lang="zh">11. 联系我们</span>
-    </h2>
-    <p data-lang="en" class="active">If you have any question about this policy or about how your data is handled, please email us:</p>
-    <p data-lang="zh">如果你对本政策或我们处理数据的方式有任何疑问，请发送邮件联系我们：</p>
-    <p>
-      <span data-lang="en" class="active">Email: <a href="mailto:support@aquakeeper.app">support@aquakeeper.app</a></span>
-      <span data-lang="zh">邮箱：<a href="mailto:support@aquakeeper.app">support@aquakeeper.app</a></span>
-    </p>
-    <p data-lang="en" class="active">We aim to respond within 7 days.</p>
-    <p data-lang="zh">我们争取在 7 天内回复。</p>
+  <!-- ==================== 12. CHANGES ==================== -->
+  <section class="card" id="changes">
+    <h2><span class="num">12.</span> Changes to this policy</h2>
+    <p>We may update this policy from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page and, where the change is material, notify you inside the App. Continuing to use AquaKeeper after a change means you accept the updated policy.</p>
+  </section>
+
+  <!-- ==================== 13. CONTACT ==================== -->
+  <section class="card" id="contact">
+    <h2><span class="num">13.</span> Contact us</h2>
+    <p>If you have any question about this policy or about how your data is handled, please email us:</p>
+    <p>Email: <a href="mailto:support@aquakeeper.app">support@aquakeeper.app</a></p>
+    <p class="info">We aim to respond within 7 days.</p>
   </section>
 
   <footer>
-    <span data-lang="en" class="active">© 2026 AquaKeeper · 鱼缸管家</span>
-    <span data-lang="zh">© 2026 AquaKeeper · 鱼缸管家</span>
+    &copy; 2026 AquaKeeper. All rights reserved.
   </footer>
 
 </div>
-
-<script>
-  (function () {
-    var STORAGE_KEY = 'aquakeeper_pp_lang';
-    var buttons = document.querySelectorAll('[data-set-lang]');
-    var blocks = document.querySelectorAll('[data-lang]');
-
-    function apply(lang) {
-      blocks.forEach(function (el) {
-        el.classList.toggle('active', el.getAttribute('data-lang') === lang);
-      });
-      buttons.forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
-      });
-      document.documentElement.lang = lang;
-      document.title = lang === 'zh' ? '隐私政策 — AquaKeeper' : 'Privacy Policy — AquaKeeper';
-      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-    }
-
-    function detect() {
-      var hash = (location.hash || '').replace('#', '').toLowerCase();
-      if (hash === 'zh' || hash === 'en') return hash;
-      var saved = null;
-      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-      if (saved === 'zh' || saved === 'en') return saved;
-      return (navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
-    }
-
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () { apply(b.getAttribute('data-set-lang')); });
-    });
-
-    apply(detect());
-  })();
-</script>
 </body>
 </html>

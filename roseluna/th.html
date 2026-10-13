@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>นโยบายความเป็นส่วนตัว — Roseluna</title>
+<meta name="description" content="นโยบายความเป็นส่วนตัวของ Roseluna — ข้อมูลที่เราเก็บรวบรวม วิธีใช้งาน และวิธีลบบัญชีของคุณ">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --bg: #fbf7fa;
+    --card: #ffffff;
+    --text: #241a2a;
+    --muted: #6b5b74;
+    --accent: #b76fa6;
+    --accent-strong: #9c4e8c;
+    --accent-soft: #f6e6f0;
+    --on-accent: #ffffff;
+    --border: #eddfec;
+    --warn-bg: #fff8e8;
+    --warn-border: #e8d9a8;
+    --warn-text: #6b5410;
+    --shadow: 0 1px 2px rgba(80, 30, 70, .05), 0 4px 16px rgba(80, 30, 70, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17111e;
+      --card: #20182b;
+      --text: #f0e9f4;
+      --muted: #ab9cba;
+      --accent: #e3b8d9;
+      --accent-strong: #f0c4dc;
+      --accent-soft: #3a2140;
+      --on-accent: #2e0f26;
+      --border: #382a45;
+      --warn-bg: #332b16;
+      --warn-border: #5c4f22;
+      --warn-text: #ecd48a;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, "Noto Sans Thai", "Leelawadee UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px calc(72px + env(safe-area-inset-bottom)); }
+
+  header { text-align: center; margin-bottom: 28px; }
+  .lang-switch { margin-bottom: 10px; }
+  .lang-switch a {
+    display: inline-flex; align-items: center; min-height: 36px;
+    padding: 5px 14px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent-strong);
+    font-size: .85rem; font-weight: 600; text-decoration: none;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-soft); color: var(--accent-strong);
+    padding: 6px 16px; border-radius: 999px;
+    font-size: .875rem; font-weight: 700; letter-spacing: .3px;
+  }
+  h1 {
+    font-size: clamp(1.85rem, 5.5vw, 2.5rem);
+    line-height: 1.25; margin: 18px 0 8px; letter-spacing: -.02em;
+  }
+  .meta { color: var(--muted); font-size: .9rem; }
+  .meta strong { color: var(--text); font-weight: 600; }
+
+  .toc {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 14px 16px; margin: 0 0 20px;
+    box-shadow: var(--shadow);
+  }
+  .toc-title {
+    font-size: .75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--muted); margin: 0 0 10px;
+  }
+  .toc-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .toc-list a {
+    display: inline-flex; align-items: center; min-height: 38px;
+    padding: 6px 14px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent-strong);
+    font-size: .875rem; font-weight: 600; text-decoration: none;
+    transition: background .15s ease, color .15s ease;
+  }
+  .toc-list a:hover { filter: brightness(1.05); }
+  .toc-list a:active { filter: brightness(.94); }
+  .toc-list .n { opacity: .65; margin-right: 6px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 26px 26px 10px; margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+  section { scroll-margin-top: 24px; }
+  h2 {
+    font-size: clamp(1.15rem, 3vw, 1.3rem);
+    margin: 0 0 14px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border); letter-spacing: -.01em;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+  h3 { font-size: 1rem; margin: 24px 0 8px; color: var(--accent-strong); }
+  p, li { font-size: .95rem; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  li::marker { color: var(--accent); }
+  a { color: var(--accent-strong); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: currentColor; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px;
+  }
+  strong { font-weight: 650; }
+  code {
+    background: var(--accent-soft); color: var(--accent-strong);
+    padding: 1px 6px; border-radius: 5px; font-size: .85em;
+  }
+
+  .table-wrap {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border); border-radius: 12px; margin: 10px 0 6px;
+  }
+  table { width: 100%; min-width: 540px; border-collapse: collapse; font-size: .9rem; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th {
+    color: var(--muted); font-weight: 700; font-size: .75rem;
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+  td:first-child { font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+
+  .note {
+    background: var(--warn-bg); border: 1px solid var(--warn-border);
+    border-radius: 12px; padding: 14px 18px; margin: 16px 0; font-size: .9rem;
+    color: var(--warn-text);
+  }
+  .note strong { display: block; margin-bottom: 4px; }
+
+  .info {
+    background: var(--accent-soft); border-radius: 12px;
+    padding: 14px 18px; margin: 16px 0; font-size: .9rem;
+  }
+
+  footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 30px; }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 28px 14px calc(56px + env(safe-area-inset-bottom)); }
+    .card { padding: 20px 16px 6px; border-radius: 14px; }
+    table { min-width: 480px; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .toc, footer, .lang-switch { display: none; }
+    .card { box-shadow: none; border-color: #ccc; break-inside: avoid; }
+    a { color: #000; text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="lang-switch"><a href="./index.html">English version</a></p>
+    <span class="brand">Roseluna · โรสลูน่า</span>
+    <h1>นโยบายความเป็นส่วนตัว</h1>
+    <p class="meta">
+      มีผลบังคับใช้: <strong>13 ตุลาคม 2026</strong>
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="สารบัญ">
+    <p class="toc-title">สารบัญ</p>
+    <ul class="toc-list">
+      <li><a href="#who-we-are"><span class="n">1</span>ใครพวกเรา</a></li>
+      <li><a href="#information-we-collect"><span class="n">2</span>ข้อมูลที่เราเก็บรวบรวม</a></li>
+      <li><a href="#how-we-use"><span class="n">3</span>วิธีที่เราใช้ข้อมูลของคุณ</a></li>
+      <li><a href="#storage-security"><span class="n">4</span>การจัดเก็บและความปลอดภัย</a></li>
+      <li><a href="#third-parties"><span class="n">5</span>บริการของบุคคลที่สาม</a></li>
+      <li><a href="#permissions"><span class="n">6</span>สิทธิ์การเข้าถึงอุปกรณ์</a></li>
+      <li><a href="#delete-account"><span class="n">7</span>ลบบัญชีของคุณ</a></li>
+      <li><a href="#retention"><span class="n">8</span>การเก็บรักษาข้อมูล</a></li>
+      <li><a href="#children"><span class="n">9</span>ความเป็นส่วนตัวของเด็ก</a></li>
+      <li><a href="#rights"><span class="n">10</span>สิทธิ์ของคุณ</a></li>
+      <li><a href="#transfers"><span class="n">11</span>การโอนข้อมูลข้ามประเทศ</a></li>
+      <li><a href="#changes"><span class="n">12</span>การเปลี่ยนแปลงนโยบาย</a></li>
+      <li><a href="#contact"><span class="n">13</span>ติดต่อเรา</a></li>
+    </ul>
+  </nav>
+
+  <section class="card" id="who-we-are">
+    <h2><span class="num">1.</span> ใครพวกเรา</h2>
+    <p>นโยบายความเป็นส่วนตัวฉบับนี้มีผลบังคับใช้กับ Roseluna ("แอป") ซึ่งเป็นแอปพลิเคชันไพ่ทารอต ความฝัน และดวงรายวัน ที่เผยแพร่โดยทีมงาน Roseluna ("เรา" หรือ "ของเรา") สำหรับวัตถุประสงค์ของกฎหมายคุ้มครองข้อมูลส่วนบุคคลที่ใช้บังคับ ทีมงาน Roseluna เป็นผู้ควบคุมข้อมูลส่วนบุคคลที่อธิบายไว้ในนโยบายฉบับนี้ แอปมีตัวเลือกการสมัครบัญชี (การลงทะเบียนและลงชื่อเข้าใช้ด้วยอีเมล ซึ่งขับเคลื่อนโดย Google Firebase Authentication) การสร้างบัญชีไม่ใช่ข้อบังคับในการใช้แอป แต่จะช่วยให้สามารถซิงก์ผ่านคลาวด์ข้ามอุปกรณ์ของข้อมูลวันเกิดและเนื้อหาของคุณได้ นโยบายฉบับนี้อยู่ภายใต้กฎหมายที่ใช้บังคับแห่งสถานที่ตั้งของผู้เผยแพร่ โดยไม่กระทบต่อการคุ้มครองผู้บริโภคตามข้อบังคับใด ๆ ในประเทศหรือรัฐที่คุณพำนักอาศัย</p>
+  </section>
+
+  <section class="card" id="information-we-collect">
+    <h2><span class="num">2.</span> ข้อมูลที่เราเก็บรวบรวม</h2>
+
+    <h3>2.1 ข้อมูลบัญชี</h3>
+    <p>เมื่อคุณสร้างบัญชี เราจะเก็บรวบรวมที่อยู่อีเมลของคุณผ่าน Google Firebase Authentication ซึ่งจำเป็นสำหรับการลงทะเบียนและการลงชื่อเข้าใช้</p>
+
+    <h3>2.2 ข้อมูลวันเกิด</h3>
+    <p>สำหรับผู้ใช้ที่ลงชื่อเข้าใช้ เราจะเก็บรวบรวมวันเกิด เวลาเกิด และเมืองที่เกิดที่คุณกรอก เพื่อให้สามารถคำนวณคำพยากรณ์ของคุณและซิงก์ข้อมูลข้ามอุปกรณ์ได้</p>
+
+    <h3>2.3 เนื้อหาของคุณ</h3>
+    <p>สำหรับผู้ใช้ที่ลงชื่อเข้าใช้ เราจะเก็บรวบรวมและซิงก์ผ่านคลาวด์เนื้อหาที่คุณสร้างขึ้นในแอป ได้แก่ บันทึกการอ่านไพ่ทารอต (รวมถึงข้อความคำถามที่คุณพิมพ์) บันทึกความเข้ากันได้ของคู่ รายการสมุดบันทึกความฝัน และประวัติอารมณ์ ข้อมูลเหล่านี้จะถูกจัดเก็บไว้ในเอกสาร Firestore เดียวที่สงวนไว้สำหรับบัญชีของคุณ</p>
+
+    <h3>2.4 ข้อมูลการวิเคราะห์และข้อมูลข้อผิดพลาด</h3>
+    <p>เราใช้ Google Firebase Analytics เพื่อบันทึกเหตุการณ์การเปิดแอป การลงชื่อเข้าใช้ และการลงทะเบียน และใช้ Google Firebase Crashlytics เพื่อเก็บรวบรวมบันทึกข้อผิดพลาด (crash logs) รายงานข้อผิดพลาดจะถูกเชื่อมโยงกับตัวระบุบัญชีเพื่อช่วยให้เราวินิจฉัยปัญหาที่ส่งผลกระทบต่อคุณ</p>
+
+    <h3>2.5 ตำแหน่งที่ตั้ง (ครั้งเดียว บนอุปกรณ์เท่านั้น)</h3>
+    <p>หากคุณให้สิทธิ์การเข้าถึง แอปจะค้นหาตำแหน่งที่ตั้งเพียงครั้งเดียวในโหมดพื้นหน้าเท่านั้น เพื่อแนะนำเมืองที่ใกล้ที่สุดกับคุณขณะตั้งค่าข้อมูลวันเกิด พิกัดจะถูกใช้บนอุปกรณ์ของคุณเท่านั้น — ไม่มีการจัดเก็บ ไม่มีการอัปโหลด และแอปไม่ติดตามตำแหน่งที่ตั้งของคุณในพื้นหลัง</p>
+
+    <h3>2.6 ข้อเสนอแนะ</h3>
+    <p>หากคุณส่งข้อเสนอแนะผ่านแอป เราจะเก็บรวบรวมข้อมูลดังต่อไปนี้:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>รายการ</th><th>คำอธิบาย</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ประเภทข้อเสนอแนะ</td><td>ประเภทของคำติชมหรือข้อเสนอแนะที่คุณเลือก</td></tr>
+          <tr><td>เนื้อหา</td><td>ข้อความที่คุณพิมพ์ส่ง</td></tr>
+          <tr><td>ข้อมูลติดต่อ (ไม่บังคับ)</td><td>อีเมลหรือช่องทางติดต่อที่คุณเลือกให้ เพื่อให้เราติดตามผลได้</td></tr>
+          <tr><td>แพลตฟอร์มและเวอร์ชัน</td><td>ระบบปฏิบัติการและเวอร์ชันแอปที่คุณใช้งาน</td></tr>
+          <tr><td>ประทับเวลา</td><td>เวลาที่คุณส่งข้อเสนอแนะ</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <strong>โปรดทราบ</strong>
+      โปรดอย่าระบุรหัสผ่าน ข้อมูลการชำระเงิน หรือข้อมูลส่วนบุคคลที่อ่อนไหวอื่น ๆ ในข้อเสนอแนะของคุณ
+    </div>
+
+    <h3>2.7 การประมวลผลด้วย AI</h3>
+    <p>เมื่อคุณขอคำพยากรณ์ (ทารอต ความฝัน ดวงรายวัน หรือความเข้ากันได้ของคู่) แอปจะส่งคำสั่ง (prompt) ที่เกี่ยวข้อง — ซึ่งอาจรวมถึงข้อมูลวันเกิดและคำถามของคุณ — ไปยังผู้ให้บริการ AI ของเรา ได้แก่ DeepSeek และ Zhipu AI โดยมีวัตถุประสงค์เพียงเพื่อสร้างคำพยากรณ์ของคุณเท่านั้น</p>
+
+    <h3>2.8 สิ่งที่เราไม่เก็บรวบรวม</h3>
+    <p>แอปไม่มี SDK โฆษณาและไม่มีการซื้อภายในแอป เราไม่เก็บรวบรวมตัวระบุการโฆษณาเพื่อการกำหนดเป้าหมายโฆษณา รายชื่อติดต่อ รูปภาพ หรือประวัติตำแหน่งที่ตั้งที่ละเอียด</p>
+  </section>
+
+  <section class="card" id="how-we-use">
+    <h2><span class="num">3.</span> วิธีที่เราใช้ข้อมูลของคุณ</h2>
+    <p>เราใช้ข้อมูลข้างต้นเพียงเพื่อวัตถุประสงค์ดังต่อไปนี้:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>วัตถุประสงค์</th><th>คำอธิบาย</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>การจัดการบัญชี</td><td>การลงทะเบียน การลงชื่อเข้าใช้ และการดูแลบัญชีของคุณ</td></tr>
+          <tr><td>การซิงก์ผ่านคลาวด์</td><td>ซิงก์ข้อมูลวันเกิดและเนื้อหาของคุณข้ามอุปกรณ์</td></tr>
+          <tr><td>การตีความด้วย LLM</td><td>สร้างคำพยากรณ์ส่วนบุคคลผ่านผู้ให้บริการ AI</td></tr>
+          <tr><td>ความเสถียรและการวินิจฉัยข้อผิดพลาด</td><td>ปรับปรุงความเสถียรของแอปและแก้ไขข้อผิดพลาด</td></tr>
+          <tr><td>ข้อเสนอแนะ</td><td>ตอบกลับและติดตามผลคำติชมของคุณ</td></tr>
+          <tr><td>การแจ้งเตือนดวงรายวัน</td><td>ส่งการแจ้งเตือนเฉพาะเมื่อคุณเลือกรับเท่านั้น</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>เราไม่ขายข้อมูลส่วนบุคคลของคุณและไม่ใช้เพื่อการโฆษณา</p>
+  </section>
+
+  <section class="card" id="storage-security">
+    <h2><span class="num">4.</span> การจัดเก็บและความปลอดภัย</h2>
+    <p>ข้อมูลจะถูกจัดเก็บบนอุปกรณ์ของคุณ และสำหรับผู้ใช้ที่ลงชื่อเข้าใช้ จะจัดเก็บบน Google Firebase (Authentication, Cloud Firestore, Analytics, Crashlytics) ซึ่งโฮสต์โดย Google LLC ข้อมูลทั้งหมดที่ส่งระหว่างแอปกับเซิร์ฟเวอร์ของเราและบริการของบุคคลที่สามจะถูกเข้ารหัสระหว่างการส่งข้อมูล (HTTPS/TLS) ข้อมูลบนคลาวด์จะถูกเก็บไว้จนกว่าคุณจะลบบัญชีหรือร้องขอการลบ ข้อมูลการวิเคราะห์จะถูกเก็บรักษาตามการตั้งค่าการเก็บรักษามาตรฐานของ Firebase</p>
+  </section>
+
+  <section class="card" id="third-parties">
+    <h2><span class="num">5.</span> บริการของบุคคลที่สาม</h2>
+    <p>เราไม่ขายหรือให้เช่าข้อมูลส่วนบุคคลของคุณ ข้อมูลจะถูกแบ่งปันเฉพาะกับผู้ให้บริการรายต่อไปนี้ ซึ่งดำเนินการประมวลผลข้อมูลในนามของเราเพื่อให้แอปทำงาน:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ผู้ให้บริการ</th><th>วัตถุประสงค์</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Firebase (Google LLC)</td><td>การยืนยันตัวตนบัญชี การซิงก์ข้อมูลผ่านคลาวด์ การวิเคราะห์ และการรายงานข้อผิดพลาด</td></tr>
+          <tr><td>DeepSeek</td><td>การตีความคำพยากรณ์ของคุณที่สร้างด้วย AI</td></tr>
+          <tr><td>Zhipu AI (Zhipu Qingyan / bigmodel.cn)</td><td>การตีความคำพยากรณ์ของคุณที่สร้างด้วย AI (ผู้ให้บริการสำรอง)</td></tr>
+          <tr><td>เซิร์ฟเวอร์ข้อเสนอแนะ (สิงคโปร์)</td><td>จัดเก็บข้อเสนอแนะที่คุณส่งผ่านแอป</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>เราอาจเปิดเผยข้อมูลเฉพาะเมื่อกฎหมายหรือกระบวนการทางกฎหมายที่ใช้บังคับกำหนด</p>
+  </section>
+
+  <section class="card" id="permissions">
+    <h2><span class="num">6.</span> สิทธิ์การเข้าถึงอุปกรณ์</h2>
+    <p>แอปจะขอสิทธิ์การเข้าถึงอุปกรณ์ดังต่อไปนี้ โดยขอเฉพาะเมื่อคุณใช้งานฟีเจอร์ที่เกี่ยวข้องเท่านั้น แอปไม่เข้าถึงตำแหน่งที่ตั้งหรือรูปภาพของคุณในพื้นหลังเด็ดขาด</p>
+    <ul>
+      <li><strong>ตำแหน่งที่ตั้ง</strong> — เฉพาะเมื่อคุณแตะ "ใช้ตำแหน่งที่ตั้งของฉัน" ขณะตั้งค่าเมืองที่เกิด เพื่อกรอกชื่อเมือง ใช้เพียงครั้งเดียว ในโหมดพื้นหน้าเท่านั้น</li>
+      <li><strong>การแจ้งเตือน</strong> — เฉพาะเมื่อคุณเลือกรับ เพื่อส่งการแจ้งเตือนดวงรายวัน คุณสามารถปิดได้ตลอดเวลาในการตั้งค่า</li>
+      <li><strong>รูปภาพ / คลังสื่อ</strong> — เพื่อบันทึกการ์ดแชร์ลงคลังรูปภาพของคุณเมื่อคุณแตะปุ่มบันทึกอย่างชัดแจ้ง</li>
+    </ul>
+    <p>คุณสามารถเพิกถอนสิทธิ์เหล่านี้ได้ตลอดเวลาในการตั้งค่าของอุปกรณ์ โดยฟีเจอร์ที่เกี่ยวข้องจะเพียงหยุดทำงานเท่านั้น</p>
+  </section>
+
+  <section class="card" id="delete-account">
+    <h2><span class="num">7.</span> ลบบัญชีของคุณ</h2>
+    <p>คุณสามารถลบบัญชีได้จากภายในแอป: <strong>การตั้งค่า → บัญชี → ลบบัญชี</strong> (ยืนยันสองครั้งเมื่อระบบแจ้งให้ยืนยัน) การลบบัญชีของคุณจะเป็นการลบบัญชี Firebase Authentication ของคุณและลบเอกสารข้อมูลบนคลาวด์ที่เกี่ยวข้อง รวมถึงข้อมูลวันเกิด บันทึกการอ่านไพ่ทารอตและความเข้ากันได้ของคู่ สมุดบันทึกความฝัน และประวัติอารมณ์ การกระทำนี้ถาวรและไม่สามารถย้อนกลับได้ หากคุณไม่สามารถเข้าถึงแอปได้ คุณสามารถร้องขอการลบบัญชีได้โดยส่งอีเมลตามส่วนที่ 13 เราจะตรวจสอบคำขอของคุณและลบข้อมูลบนคลาวด์ที่เกี่ยวข้อง</p>
+  </section>
+
+  <section class="card" id="retention">
+    <h2><span class="num">8.</span> การเก็บรักษาข้อมูล</h2>
+    <ul>
+      <li><strong>บนอุปกรณ์ของคุณ:</strong> ข้อมูลวันเกิด สมุดบันทึกความฝัน และประวัติต่าง ๆ จะยังคงอยู่จนกว่าคุณจะลบเองหรือถอนการติดตั้งแอป การถอนการติดตั้งจะเป็นการลบข้อมูลที่จัดเก็บไว้ในเครื่องทั้งหมด</li>
+      <li><strong>บนคลาวด์ (ผู้ใช้ที่ลงชื่อเข้าใช้):</strong> ข้อมูลที่ซิงก์ของคุณจะถูกเก็บไว้จนกว่าคุณจะลบบัญชี (ดูส่วนที่ 7) หรือร้องขอการลบ</li>
+      <li><strong>ข้อเสนอแนะที่คุณส่ง:</strong> เก็บรักษาเพียงระยะเวลาที่จำเป็นเพื่อดำเนินการกับรายงานของคุณและปรับปรุงแอป หลังจากนั้นจะถูกลบ</li>
+      <li><strong>ข้อมูลการวิเคราะห์:</strong> เก็บรักษาตามการตั้งค่าการเก็บรักษามาตรฐานของ Firebase</li>
+      <li><strong>คำสั่ง (prompt) ที่ส่งไปยัง LLM:</strong> ดำเนินการประมวลผลโดยผู้ให้บริการ LLM ภายใต้นโยบายการเก็บรักษาของผู้ให้บริการเหล่านั้นเอง</li>
+    </ul>
+  </section>
+
+  <section class="card" id="children">
+    <h2><span class="num">9.</span> ความเป็นส่วนตัวของเด็ก</h2>
+    <p>แอปนี้ไม่ได้มุ่งเป้าไปยังเด็กที่มีอายุต่ำกว่า 13 ปี (หรืออายุขั้นต่ำที่เทียบเท่าตามกฎหมายในเขตอำนาจศาลของคุณ โดยในเขตเศรษฐกิจยุโรป (EEA) อาจสูงถึง 16 ปี) เราไม่เก็บรวบรวมข้อมูลส่วนบุคคลจากเด็กโดยเจตนา หากคุณเชื่อว่ามีเด็กให้ข้อมูลส่วนบุคคลแก่เรา โปรดติดต่อเราและเราจะลบข้อมูลนั้น</p>
+  </section>
+
+  <section class="card" id="rights">
+    <h2><span class="num">10.</span> สิทธิ์ของคุณ</h2>
+
+    <h3>10.1 เขตเศรษฐกิจยุโรป (EEA) และสหราชอาณาจักร (GDPR)</h3>
+    <p>คุณมีสิทธิ์ที่จะเข้าถึง แก้ไข ลบ จำกัด และโอนย้ายข้อมูลส่วนบุคคลของคุณ คัดค้านการประมวลผลบางประเภท และถอนความยินยอมได้ตลอดเวลา นอกจากนี้คุณยังมีสิทธิ์ร้องเรียนต่อหน่วยงานคุ้มครองข้อมูลส่วนบุคคลในท้องถิ่นของคุณ</p>
+
+    <h3>10.2 แคลิฟอร์เนีย (CCPA/CPRA)</h3>
+    <p>ผู้พำนักอาศัยในแคลิฟอร์เนียมีสิทธิ์ที่จะทราบ ลบ และแก้ไขข้อมูลส่วนบุคคล เราไม่ขายหรือ "แบ่งปัน" ข้อมูลส่วนบุคคลเพื่อการโฆษณาตามบริบทข้ามแพลตฟอร์ม และไม่เก็บรวบรวม "ข้อมูลส่วนบุคคลอันอ่อนไหว" ตามนิยามของ CCPA เราจะไม่เลือกปฏิบัติต่อคุณจากการที่คุณใช้สิทธิ์เหล่านี้</p>
+
+    <h3>10.3 ภูมิภาคอื่น ๆ</h3>
+    <p>ผู้พำนักอาศัยในรัฐอื่น ๆ ของสหรัฐอเมริกาที่มีกฎหมายคุ้มครองความเป็นส่วนตัวแบบครอบคลุม (เช่น โคโลราโด คอนเนตทิคัต เวอร์จิเนีย และยูทาห์) มีสิทธิ์ที่คล้ายคลึงกัน รวมถึงการเข้าถึง การลบ การแก้ไข และการโอนย้ายข้อมูล ในกรณีที่กฎหมายท้องถิ่นให้สิทธิ์ที่เทียบเท่าแก่คุณ เราจะปฏิบัติตามผ่านช่องทางเดียวกัน</p>
+
+    <h3>10.4 วิธีใช้สิทธิ์ของคุณ</h3>
+    <p>คุณสามารถดูและแก้ไขข้อมูลวันเกิดและเนื้อหาของคุณในแอปได้ตลอดเวลา และสามารถลบบัญชี (พร้อมข้อมูลบนคลาวด์) ได้โดยตรงในแอปตามส่วนที่ 7 สำหรับข้อมูลข้อเสนอแนะหรือกรณีอื่น ๆ โปรดติดต่อเราตามส่วนที่ 13 เรามุ่งหมายที่จะตอบกลับภายในระยะเวลาที่กฎหมายที่ใช้บังคับกำหนด (และในทุกกรณี ภายใน 7 วันเมื่อทำได้)</p>
+  </section>
+
+  <section class="card" id="transfers">
+    <h2><span class="num">11.</span> การโอนข้อมูลข้ามประเทศ</h2>
+    <p>ข้อมูลบนคลาวด์ของผู้ใช้ที่ลงชื่อเข้าใช้จะถูกโฮสต์โดย Google Firebase ซึ่งมีโครงสร้างพื้นฐานกระจายอยู่ทั่วโลก (รวมถึงสหรัฐอเมริกา) ข้อเสนอแนะที่คุณส่งจะถูกจัดเก็บบนเซิร์ฟเวอร์ที่ตั้งอยู่ในสิงคโปร์ ข้อความที่คุณส่งเพื่อขอคำพยากรณ์จะถูกประมวลผลโดยผู้ให้บริการ LLM ของเรา ซึ่งเซิร์ฟเวอร์อาจตั้งอยู่ในประเทศอื่น ๆ (รวมถึงสหรัฐอเมริกาและจีนแผ่นดินใหญ่ ขึ้นอยู่กับผู้ให้บริการที่ใช้) ในกรณีที่จำเป็น การโอนข้อมูลเหล่านี้อาศัยการตัดสินใจยอมรับความเพียงพอ (adequacy decisions) ข้อกำหนดสัญญามาตรฐาน หรือกลไกการโอนข้อมูลที่ชอบด้วยกฎหมายอื่น ๆ</p>
+  </section>
+
+  <section class="card" id="changes">
+    <h2><span class="num">12.</span> การเปลี่ยนแปลงนโยบายฉบับนี้</h2>
+    <p>เราอาจอัปเดตนโยบายความเป็นส่วนตัวฉบับนี้เป็นครั้งคราว เราจะเผยแพร่นโยบายฉบับปรับปรุงไว้บนหน้านี้พร้อมวันที่มีผลบังคับใช้ที่แก้ไขแล้ว</p>
+  </section>
+
+  <section class="card" id="contact">
+    <h2><span class="num">13.</span> ติดต่อเรา</h2>
+    <p>หากคุณมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวนี้หรือต้องการใช้สิทธิ์เกี่ยวกับข้อมูลของคุณ โปรดติดต่อเราที่:</p>
+    <p>อีเมล: <a href="mailto:tangyulong555@gmail.com">tangyulong555@gmail.com</a></p>
+    <p class="info">เรามุ่งหมายที่จะตอบกลับภายใน 7 วันเมื่อทำได้</p>
+  </section>
+
+  <footer>
+    &copy; 2026 Roseluna. All rights reserved.
+  </footer>
+
+</div>
+</body>
+</html>

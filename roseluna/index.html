@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy — Roseluna</title>
-<meta name="description" content="Privacy Policy for Roseluna — how we collect, use and protect your data. Your birth profile stays on your device.">
+<meta name="description" content="Privacy Policy for Roseluna — how we collect, use and protect your data, including cloud sync, analytics and how to delete your account.">
 <meta name="color-scheme" content="light dark">
 <style>
   :root {
@@ -176,8 +176,8 @@
     <span class="brand">Roseluna · 玫月</span>
     <h1>Privacy Policy</h1>
     <p class="meta">
-      Effective date: <strong>September 28, 2026</strong><br>
-      Last updated: September 28, 2026
+      Effective date: <strong>October 13, 2026</strong><br>
+      Last updated: October 13, 2026
     </p>
   </header>
 
@@ -188,15 +188,16 @@
       <li><a href="#who-we-are"><span class="n">1</span>Who we are</a></li>
       <li><a href="#information-we-collect"><span class="n">2</span>Information we collect</a></li>
       <li><a href="#how-we-use"><span class="n">3</span>How we use your information</a></li>
-      <li><a href="#third-parties"><span class="n">4</span>Third-party services</a></li>
-      <li><a href="#permissions"><span class="n">5</span>Device permissions</a></li>
-      <li><a href="#retention"><span class="n">6</span>Data retention &amp; deletion</a></li>
-      <li><a href="#security"><span class="n">7</span>Data security</a></li>
-      <li><a href="#children"><span class="n">8</span>Children's privacy</a></li>
-      <li><a href="#rights"><span class="n">9</span>Your rights</a></li>
-      <li><a href="#transfers"><span class="n">10</span>International transfers</a></li>
-      <li><a href="#changes"><span class="n">11</span>Changes to this policy</a></li>
-      <li><a href="#contact"><span class="n">12</span>Contact us</a></li>
+      <li><a href="#storage-security"><span class="n">4</span>Storage &amp; security</a></li>
+      <li><a href="#third-parties"><span class="n">5</span>Third-party services</a></li>
+      <li><a href="#permissions"><span class="n">6</span>Device permissions</a></li>
+      <li><a href="#delete-account"><span class="n">7</span>Delete your account</a></li>
+      <li><a href="#retention"><span class="n">8</span>Data retention</a></li>
+      <li><a href="#children"><span class="n">9</span>Children's privacy</a></li>
+      <li><a href="#rights"><span class="n">10</span>Your rights</a></li>
+      <li><a href="#transfers"><span class="n">11</span>International transfers</a></li>
+      <li><a href="#changes"><span class="n">12</span>Changes to this policy</a></li>
+      <li><a href="#contact"><span class="n">13</span>Contact us</a></li>
     </ul>
   </nav>
 
@@ -204,7 +205,7 @@
   <section class="card" id="who-we-are">
     <h2><span class="num">1.</span> Who we are</h2>
     <p>This Privacy Policy applies to <strong>Roseluna</strong> (the &ldquo;App&rdquo;), a tarot, dream and daily-fortune application published by the <strong>Roseluna team</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). For the purposes of applicable data protection laws, the Roseluna team is the <strong>data controller</strong> of the personal information described in this policy.</p>
-    <p>Roseluna has <strong>no accounts and no sign-up</strong>. We do not operate a user database, and we do not associate the data described below with any persistent user identity.</p>
+    <p>The App offers an <strong>optional account</strong> (email sign-up and sign-in powered by Google Firebase Authentication). Creating an account is not required to use the App, but it enables cross-device cloud sync of your birth profile and your content.</p>
     <p>This policy is governed by the laws applicable to the publisher's place of establishment, without prejudice to any mandatory consumer protections in your country or state of residence.</p>
   </section>
 
@@ -212,16 +213,23 @@
   <section class="card" id="information-we-collect">
     <h2><span class="num">2.</span> Information we collect</h2>
 
-    <h3>2.1 Information you provide voluntarily</h3>
+    <h3>2.1 Account information</h3>
+    <p>If you create an account, we collect your <strong>email address</strong> through Google Firebase Authentication. This is required for registration, sign-in and password reset. You can also request a verification email to confirm your address.</p>
 
-    <h3>Birth profile (used to generate your readings)</h3>
-    <p>To personalise your daily fortune and tarot readings, the App processes the birth information you enter: <strong>date of birth, time of birth, and birth city</strong>. When the App generates an AI-powered reading, the relevant parts of this information are sent to a large-language-model (LLM) provider listed in <a href="#third-parties">Section 4</a> to produce the text. Your profile itself is stored only on your device and is never uploaded to us.</p>
+    <h3>2.2 Birth profile (cloud-synced for logged-in users)</h3>
+    <p>To personalise your daily fortune and tarot readings, the App processes the birth information you enter: <strong>date of birth, time of birth, and birth city</strong>. If you are signed in, this profile is synced to your private cloud document so your readings work across devices. When the App generates an AI-powered reading, the relevant parts of this information are sent to an LLM provider listed in <a href="#third-parties">Section 5</a> to produce the text. If you are not signed in, your profile stays only on your device.</p>
 
-    <h3>Dream journal and tarot questions</h3>
-    <p>When you ask a tarot question, submit a dream for interpretation, or use the dream-number conversion, the text you type is sent to the LLM provider to generate your reading. Please do not include information in these texts that you would not want a third-party AI service to process.</p>
+    <h3>2.3 Your content (cloud-synced for logged-in users)</h3>
+    <p>If you are signed in, the content you create in the App is cloud-synced and stored in a single Firestore document reserved for your account: tarot reading logs (<strong>including the question text you type</strong>), partner compatibility logs, dream diary entries, and mood history. If you are not signed in, this content stays only on your device. Please do not include information in these texts that you would not want a third-party AI service to process.</p>
 
-    <h3>Feedback</h3>
-    <p>When you submit feedback through <em>Settings &rarr; Feedback</em>, we receive only the fields described below. Providing contact details is entirely optional.</p>
+    <h3>2.4 Analytics and crash data</h3>
+    <p>We use <strong>Google Firebase Analytics</strong> to record app-open, sign-in and sign-up events, and <strong>Google Firebase Crashlytics</strong> to collect crash logs. Crash reports are associated with an account identifier to help us diagnose issues affecting you.</p>
+
+    <h3>2.5 Location (one-time, on-device only)</h3>
+    <p>If you grant permission, the App performs a single, foreground-only location lookup to suggest the city nearest to you when you set up your birth profile. The coordinates are used on your device only — they are <strong>never stored, never uploaded</strong>, and the App never tracks your location in the background.</p>
+
+    <h3>2.6 Feedback</h3>
+    <p>When you submit feedback through <em>Settings &rarr; Feedback</em>, we receive the fields described below. Providing contact details is entirely optional.</p>
     <div class="table-wrap">
       <table>
         <thead>
@@ -241,18 +249,11 @@
       Never include passwords, payment details or other sensitive information in a feedback message.
     </div>
 
-    <h3>2.2 No tracking, no ads, no analytics SDKs</h3>
-    <p>Roseluna contains <strong>no advertising SDKs, no analytics SDKs and no crash-reporting SDKs</strong>. We do not collect advertising identifiers (AAID/IDFA), we do not track you across apps or websites, and we do not build behavioural profiles. The App calls our LLM providers and the feedback endpoint directly; nothing else is transmitted.</p>
+    <h3>2.7 AI processing</h3>
+    <p>When you request an interpretation (tarot, dream, daily fortune, or compatibility), the App sends the relevant prompt — which may include your birth data and your question — to our AI service providers, DeepSeek and Zhipu AI, solely to generate your reading.</p>
 
-    <h3>2.3 Data that stays on your device</h3>
-    <p>The following is stored locally on your device and is <strong>never transmitted to us or to any server</strong>:</p>
-    <ul>
-      <li>Your birth profile (date, time, birth city)</li>
-      <li>Your dream journal entries and mood records</li>
-      <li>Tarot reading history and lucky-colour / lucky-time records</li>
-      <li>App preferences (language, notification settings)</li>
-    </ul>
-    <p>Uninstalling the App deletes all of the above from your device.</p>
+    <h3>2.8 What we do NOT collect</h3>
+    <p>The App contains <strong>no advertising SDKs and no in-app purchases</strong>. We do not collect advertising identifiers for ad targeting, we do not track you across apps or websites, and we do not collect contacts, photos, or precise location history.</p>
   </section>
 
   <!-- ==================== 3. HOW WE USE ==================== -->
@@ -265,7 +266,10 @@
           <tr><th>Purpose</th><th>Legal basis (GDPR)</th></tr>
         </thead>
         <tbody>
+          <tr><td>Manage your account (registration, sign-in, password reset, email verification)</td><td>Contract performance</td></tr>
+          <tr><td>Provide cross-device cloud sync of your birth profile and content</td><td>Contract performance</td></tr>
           <tr><td>Generate your daily fortune, tarot and dream readings with an LLM provider</td><td>Consent (you choose when to generate a reading)</td></tr>
+          <tr><td>Improve stability and diagnose crashes (Analytics, Crashlytics)</td><td>Legitimate interests</td></tr>
           <tr><td>Answer and act on the feedback you send us</td><td>Consent, and legitimate interests in supporting our users</td></tr>
           <tr><td>Deliver the daily-fortune notification you opted into</td><td>Consent</td></tr>
         </tbody>
@@ -274,27 +278,37 @@
     <p>We do <strong>not</strong> sell your personal information, and we do not use your birth data, dreams or questions for advertising, profiling or model training by us. We do not use your information for automated decision-making that produces legal or similarly significant effects.</p>
   </section>
 
-  <!-- ==================== 4. THIRD PARTIES ==================== -->
+  <!-- ==================== 4. STORAGE & SECURITY ==================== -->
+  <section class="card" id="storage-security">
+    <h2><span class="num">4.</span> Storage and security</h2>
+    <p>Data is stored on your device and, for logged-in users, on Google Firebase (Authentication, Cloud Firestore, Analytics, Crashlytics), hosted by Google LLC. All data transmitted between the App and our servers and third-party services is <strong>encrypted in transit (HTTPS/TLS)</strong>.</p>
+    <p>We take reasonable technical and organisational measures to protect the information we handle, including restricting access to feedback data to the small team responsible for support. No method of transmission or storage over the internet is completely secure, so we cannot guarantee absolute security.</p>
+    <p>In the unlikely event of a personal data breach that affects you, we will notify affected users and, where required, the relevant data protection authorities, in accordance with applicable law.</p>
+  </section>
+
+  <!-- ==================== 5. THIRD PARTIES ==================== -->
   <section class="card" id="third-parties">
-    <h2><span class="num">4.</span> Third-party services</h2>
-    <p>When you generate a reading, the App sends the necessary prompt context (your birth details and your question / dream text) to one of the LLM providers below. Each provider processes data under its own privacy policy.</p>
+    <h2><span class="num">5.</span> Third-party services</h2>
+    <p>We do not sell or rent your personal information. Data is shared only with the following service providers, which process data on our behalf to operate the App:</p>
     <div class="table-wrap">
       <table>
         <thead>
           <tr><th>Provider</th><th>Role</th><th>Privacy policy</th></tr>
         </thead>
         <tbody>
+          <tr><td>Google Firebase (Google LLC)</td><td>Account authentication, cloud data sync, analytics, crash reporting</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
           <tr><td>DeepSeek (Hangzhou DeepSeek AI)</td><td>LLM text generation for readings</td><td><a href="https://www.deepseek.com/en-us/privacy" target="_blank" rel="noopener">deepseek.com/privacy</a></td></tr>
-          <tr><td>Zhipu AI / Z.ai (GLM)</td><td>LLM text generation for readings</td><td><a href="https://open.bigmodel.cn/en/privacy" target="_blank" rel="noopener">open.bigmodel.cn/privacy</a></td></tr>
+          <tr><td>Zhipu AI / Z.ai (GLM)</td><td>LLM text generation for readings (alternate provider)</td><td><a href="https://open.bigmodel.cn/en/privacy" target="_blank" rel="noopener">open.bigmodel.cn/privacy</a></td></tr>
         </tbody>
       </table>
     </div>
-    <p>Besides the LLM providers, the only other destination of your data is the feedback endpoint described in <a href="#information-we-collect">Section 2</a>, hosted on our own server in Singapore.</p>
+    <p>Besides the providers above, the only other destination of your data is the feedback endpoint described in <a href="#information-we-collect">Section 2</a>, hosted on our own server in Singapore.</p>
+    <p>We may disclose information only if required by applicable law or legal process.</p>
   </section>
 
-  <!-- ==================== 5. PERMISSIONS ==================== -->
+  <!-- ==================== 6. PERMISSIONS ==================== -->
   <section class="card" id="permissions">
-    <h2><span class="num">5.</span> Device permissions</h2>
+    <h2><span class="num">6.</span> Device permissions</h2>
     <p>The App requests the following device permissions, <strong>only when you actively use the corresponding feature</strong>. It never accesses your location or photos in the background.</p>
     <ul>
       <li><strong>Location</strong> &mdash; only when you tap &ldquo;use my location&rdquo; while setting your birth city, to fill in the city name. Used once, in the foreground only.</li>
@@ -304,63 +318,66 @@
     <p>You can revoke these permissions at any time in your device settings; the related features will simply stop working.</p>
   </section>
 
-  <!-- ==================== 6. RETENTION ==================== -->
+  <!-- ==================== 7. DELETE YOUR ACCOUNT ==================== -->
+  <section class="card" id="delete-account">
+    <h2><span class="num">7.</span> Delete your account</h2>
+    <p>You can delete your account from within the App: <strong>Settings &rarr; Account &rarr; Delete Account</strong> (confirm twice when prompted).</p>
+    <p>Deleting your account removes your Firebase Authentication account and erases the associated cloud data document, <strong>including your birth profile, tarot and compatibility logs, dream diary, and mood history</strong>. This action is permanent and cannot be undone.</p>
+    <p>If you cannot access the App, you may request account deletion by emailing us at <a href="#contact">Section 13</a>; we will verify your request and delete the associated cloud data.</p>
+  </section>
+
+  <!-- ==================== 8. RETENTION ==================== -->
   <section class="card" id="retention">
-    <h2><span class="num">6.</span> Data retention and deletion</h2>
+    <h2><span class="num">8.</span> Data retention</h2>
     <ul>
-      <li><strong>On your device:</strong> your birth profile, dream journal and history persist until you delete them or uninstall the App.</li>
+      <li><strong>On your device:</strong> your birth profile, dream journal and history persist until you delete them or uninstall the App. Uninstalling removes all locally stored data.</li>
+      <li><strong>In the cloud (logged-in users):</strong> your synced data is retained until you delete your account (see <a href="#delete-account">Section 7</a>) or request deletion.</li>
       <li><strong>Feedback you sent:</strong> retained only as long as needed to handle your report and improve the App, after which it is deleted.</li>
-      <li><strong>LLM prompts:</strong> processed by the LLM providers under their own retention policies; we do not store your prompts or readings on any server.</li>
+      <li><strong>Analytics data:</strong> retained in accordance with Firebase's standard retention settings.</li>
+      <li><strong>LLM prompts:</strong> processed by the LLM providers under their own retention policies.</li>
     </ul>
   </section>
 
-  <!-- ==================== 7. SECURITY ==================== -->
-  <section class="card" id="security">
-    <h2><span class="num">7.</span> Data security</h2>
-    <p>We take reasonable technical and organisational measures to protect the information we handle, including restricting access to feedback data to the small team responsible for support. Because your core data never leaves your device, it also benefits from your device's own security (screen lock, disk encryption). No method of transmission or storage over the internet is completely secure, so we cannot guarantee absolute security.</p>
-    <p>In the unlikely event of a personal data breach that affects you, we will notify affected users and, where required, the relevant data protection authorities, in accordance with applicable law.</p>
-  </section>
-
-  <!-- ==================== 8. CHILDREN ==================== -->
+  <!-- ==================== 9. CHILDREN ==================== -->
   <section class="card" id="children">
-    <h2><span class="num">8.</span> Children's privacy</h2>
+    <h2><span class="num">9.</span> Children's privacy</h2>
     <p>Roseluna is a general-audience entertainment app and is not directed at children under 13 (or the equivalent minimum age set by the laws of your jurisdiction, which may be up to 16 in some EU member states). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
   </section>
 
-  <!-- ==================== 9. YOUR RIGHTS ==================== -->
+  <!-- ==================== 10. YOUR RIGHTS ==================== -->
   <section class="card" id="rights">
-    <h2><span class="num">9.</span> Your rights</h2>
+    <h2><span class="num">10.</span> Your rights</h2>
 
-    <h3>9.1 EEA and UK (GDPR)</h3>
+    <h3>10.1 EEA and UK (GDPR)</h3>
     <p>You have the right to access, rectify, erase, restrict and port your personal data, to object to certain processing, and to withdraw consent at any time. You also have the right to lodge a complaint with your local data protection authority.</p>
 
-    <h3>9.2 California (CCPA/CPRA)</h3>
+    <h3>10.2 California (CCPA/CPRA)</h3>
     <p>California residents have the right to know, delete, and correct personal information. We do not sell or &ldquo;share&rdquo; personal information for cross-context behavioural advertising, and we do not collect &ldquo;sensitive personal information&rdquo; as defined by the CCPA. We will not discriminate against you for exercising any of these rights.</p>
 
-    <h3>9.3 Other regions</h3>
+    <h3>10.3 Other regions</h3>
     <p>Residents of other US states with comprehensive privacy laws (such as Colorado, Connecticut, Virginia and Utah) have similar rights, including access, deletion, correction and portability. Where local law grants you comparable rights, we will honour them through the same channels.</p>
 
-    <h3>9.4 How to exercise your rights</h3>
-    <p>Because Roseluna has no accounts, we hold no profile that identifies you. Most of your data lives on your device and can be deleted directly by uninstalling the App. For feedback data or anything else, contact us via <a href="#contact">Section 12</a>; we aim to respond within the period required by applicable law (and in any event within 7 days where feasible).</p>
+    <h3>10.4 How to exercise your rights</h3>
+    <p>You can view and edit your birth profile and your content in the App at any time, and you can delete your account (and its cloud data) directly in the App via <a href="#delete-account">Section 7</a>. For feedback data or anything else, contact us via <a href="#contact">Section 13</a>; we aim to respond within the period required by applicable law (and in any event within 7 days where feasible).</p>
   </section>
 
-  <!-- ==================== 10. TRANSFERS ==================== -->
+  <!-- ==================== 11. TRANSFERS ==================== -->
   <section class="card" id="transfers">
-    <h2><span class="num">10.</span> International data transfers</h2>
-    <p>Feedback you submit is stored on a server located in Singapore. Text you submit for readings is processed by our LLM providers, whose servers may be located in other countries (including the United States and mainland China, depending on the provider used). Where required, these transfers rely on adequacy decisions, standard contractual clauses or other lawful transfer mechanisms.</p>
+    <h2><span class="num">11.</span> International data transfers</h2>
+    <p>Cloud data of logged-in users is hosted by Google Firebase, whose infrastructure is distributed globally (including the United States). Feedback you submit is stored on a server located in Singapore. Text you submit for readings is processed by our LLM providers, whose servers may be located in other countries (including the United States and mainland China, depending on the provider used). Where required, these transfers rely on adequacy decisions, standard contractual clauses or other lawful transfer mechanisms.</p>
   </section>
 
-  <!-- ==================== 11. CHANGES ==================== -->
+  <!-- ==================== 12. CHANGES ==================== -->
   <section class="card" id="changes">
-    <h2><span class="num">11.</span> Changes to this policy</h2>
+    <h2><span class="num">12.</span> Changes to this policy</h2>
     <p>We may update this policy from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date at the top of this page and, where the change is material, notify you inside the App. Continuing to use Roseluna after a change means you accept the updated policy.</p>
   </section>
 
-  <!-- ==================== 12. CONTACT ==================== -->
+  <!-- ==================== 13. CONTACT ==================== -->
   <section class="card" id="contact">
-    <h2><span class="num">12.</span> Contact us</h2>
+    <h2><span class="num">13.</span> Contact us</h2>
     <p>If you have any question about this policy or about how your data is handled, please reach us through <strong>Settings &rarr; Feedback</strong> inside the App, or email us:</p>
-    <p>Email: <a href="mailto:support@roseluna.app">support@roseluna.app</a></p>
+    <p>Email: <a href="mailto:tangyulong555@gmail.com">tangyulong555@gmail.com</a></p>
     <p class="info">We aim to respond within 7 days.</p>
   </section>
 

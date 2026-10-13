@@ -1,0 +1,21 @@
+roseluna/index.html
+  s_2ad2b07164aaa7::t_ce4ff200daf6d2 176
+roseluna/th.html
+  s_2ad2b07164aaa7::t_10fe7d1be811e5 1-371
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "0020843e3d6899ca12671cf5eaae99563d283c53",
+  "prompts": {},
+  "sessions": {
+    "s_2ad2b07164aaa7": {
+      "agent_id": {
+        "tool": "workbuddy",
+        "id": "63632843-bca5-4654-9e90-2f73617d7908",
+        "model": "glm-5.3-flash"
+      },
+      "human_author": "yulongtang <1104653262@qq.com>"
+    }
+  }
+}

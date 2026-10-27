@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support — Roseluna</title>
+<meta name="description" content="Support for Roseluna — daily tarot readings, Thai dream oracle and personal fortune. Find answers to common questions or contact us.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --bg: #f7f5fb;
+    --card: #ffffff;
+    --text: #1c1a24;
+    --muted: #5f5b6b;
+    --accent: #7c3aed;
+    --accent-strong: #6d28d9;
+    --accent-soft: #ede9fe;
+    --border: #e4e0ee;
+    --shadow: 0 1px 2px rgba(46, 16, 101, .05), 0 4px 16px rgba(46, 16, 101, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15131b;
+      --card: #1d1a26;
+      --text: #eae7f2;
+      --muted: #a49fb5;
+      --accent: #c4b5fd;
+      --accent-strong: #d8ccfe;
+      --accent-soft: #3a2a63;
+      --on-accent: #1c1030;
+      --border: #2e2940;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.65;
+    padding: 40px 16px 64px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .logo {
+    width: 44px; height: 44px; border-radius: 12px; flex: none;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 24px;
+  }
+  h1 { font-size: 26px; font-weight: 700; letter-spacing: -.02em; }
+  .tagline { color: var(--muted); font-size: 14px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px; margin-bottom: 16px; box-shadow: var(--shadow);
+  }
+  h2 { font-size: 17px; font-weight: 700; margin-bottom: 12px; color: var(--accent-strong); }
+  .card p, .card li { font-size: 15px; color: var(--text); }
+  .card ul { padding-left: 20px; margin-top: 6px; }
+  .card li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .muted { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  .qa { margin-bottom: 14px; }
+  .qa b { display: block; margin-bottom: 2px; }
+  .lang { margin-top: 28px; text-align: center; color: var(--muted); font-size: 13px; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="logo">🌙</div>
+    <div>
+      <h1>Roseluna Support</h1>
+      <div class="tagline">Daily tarot · Thai dream oracle · Personal fortune</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>About the app</h2>
+    <p>Roseluna is your daily fortune companion — daily tarot card readings from the full Major Arcana, Thai dream interpretation with lucky numbers, a personal daily fortune based on your birth date and today's moon phase, Buddhist holy days (Wan Phra) with a merit check-in, and a private mood &amp; spiritual journal.</p>
+    <p class="muted">Your journal and dreams stay yours. An account (email sign-in) is only needed to sync your reading history and journal.</p>
+  </div>
+
+  <div class="card">
+    <h2>Frequently asked questions · 常见问题 · คำถามที่พบบ่อย</h2>
+    <div class="qa"><b>Why does my daily fortune change every day? / 为什么每日运势每天都会变？</b>
+      Your fortune is calculated from your birth date, birth region and today's moon phase, so it is refreshed once a day, around midnight local time. 每日运势基于出生日期、出生地区与当日月相计算，每天更新一次。</div>
+    <div class="qa"><b>I can't sign in / I forgot my password. / 无法登录或忘记密码？</b>
+      On the sign-in screen, tap "Forgot password" and we will email you a reset link. If the email doesn't arrive, check your spam folder and try again in a few minutes. 在登录页点击"忘记密码"，我们会发送重置邮件；如未收到请检查垃圾邮件文件夹。</div>
+    <div class="qa"><b>Can I delete my account and data? / 可以删除账号和数据吗？</b>
+      Yes. Contact us by email or GitHub issue and we will permanently delete your account and all associated data. 可以。通过邮件或 GitHub issue 联系我们，我们将彻底删除你的账号与全部关联数据。</div>
+    <div class="qa"><b>Are the readings real advice? / 占卜结果是真实建议吗？</b>
+      Roseluna is for entertainment and self-reflection only. Readings follow Thai tarot and dream-oracle traditions and are not a substitute for professional, medical, legal or financial advice. 本应用仅供娱乐与自我反思，解读内容依据泰式塔罗与传统梦书，不构成任何专业建议。</div>
+  </div>
+
+  <div class="card">
+    <h2>Contact us · 联系我们</h2>
+    <p>If you found a bug or have a feature request, open an issue on GitHub and we will respond within 2 business days:</p>
+    <ul>
+      <li>English / 中文 / ไทย: <a href="https://github.com/cq-tyl/privacy-policy/issues">github.com/cq-tyl/privacy-policy/issues</a></li>
+    </ul>
+    <p class="muted">For privacy questions, please read our <a href="https://cq-tyl.github.io/privacy-policy/roseluna/">Privacy Policy</a>.</p>
+  </div>
+
+  <div class="lang">English · 简体中文 · ไทย</div>
+</div>
+</body>
+</html>
